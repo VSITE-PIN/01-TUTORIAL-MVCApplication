@@ -1,0 +1,10 @@
+﻿<p>This is the index page of hello world</p>
+
+
+@model List<Dog> 
+<ul> 
+@foreach(var dog in Model) 
+{ 
+<li>@dog.Name - @dog.Age</li> 
+} 
+</ul> 
