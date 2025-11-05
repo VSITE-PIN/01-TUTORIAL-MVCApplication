@@ -1,0 +1,34 @@
+﻿@model List<MVCApplication.Models.Dog>
+@{
+    ViewData["Title"] = "All dogs";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h1 class="m-0">All dogs</h1>
+    <a class="btn btn-sm btn-success" asp-controller="HelloWorld" asp-action="Create">+ Create dog</a>
+</div>
+
+@if (Model == null || Model.Count == 0)
+{
+    <div class="alert alert-info">No dogs yet. Use Create to add one.</div>
+}
+else
+{
+    <table class="table table-striped align-middle">
+        <thead>
+            <tr>
+                <th style="width:60%">Name</th>
+                <th style="width:20%">Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var dog in Model)
+            {
+                <tr>
+                    <td>@dog.Name</td>
+                    <td>@dog.Age</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
